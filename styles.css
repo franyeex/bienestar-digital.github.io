@@ -1,0 +1,204 @@
+/* Archivo: styles.css */
+
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;500;700&display=swap');
+
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    background: radial-gradient(circle at 10% 20%, #1e2a38, transparent),
+                radial-gradient(circle at 80% 30%, #0f2027, transparent),
+                radial-gradient(circle at 20% 80%, #2c5364, transparent),
+                radial-gradient(circle at 70% 80%, #203a43, transparent),
+                linear-gradient(135deg, #0d0d0d, #1c1c1c);
+    font-family: 'Raleway', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #e0e0e0;
+    overflow: hidden;
+}
+
+/* Particle Effect */
+#particles-js {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+/* Container */
+.portfolio-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+/* Portfolio Card */
+.portfolio-card {
+    background-color: rgba(36, 36, 36, 0.9);
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Heading */
+.portfolio-card h1 {
+    margin-top: 0;
+    font-size: 2em;
+    font-weight: 600;
+    position: relative;
+    z-index: 1;
+}
+
+/* Highlight */
+.highlight {
+    font-family: 'Raleway', sans-serif;
+    color: linear-gradient(135deg, #00aaff, #0044cc, #0066ff);
+    background: -webkit-linear-gradient(135deg, #00aaff, #0044cc, #0066ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 600;
+}
+
+/* Description */
+.description {
+    margin: 20px 0;
+    line-height: 1.6;
+    font-weight: 400;
+    opacity: 0.8;
+    position: relative;
+    z-index: 1;
+}
+
+/* Project */
+.project {
+    margin: 20px 0;
+    line-height: 1.6;
+    font-weight: 400;
+    position: relative;
+    z-index: 1;
+}
+
+/* Social Links */
+.social-links {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    position: relative;
+    z-index: 1;
+}
+
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.github {
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+}
+
+.discord {
+    background-color: #5865f2;
+    color: #fff;
+}
+
+.tiktok {
+    background-color: #1f1f1f;
+    color: #fff;
+}
+
+/* Hover and Active Effects */
+.social-link:hover {
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.github:hover {
+    background-color: #3a3a3a;
+}
+
+.discord:hover {
+    background-color: #4752c4;
+}
+
+.tiktok:hover {
+    background-color: #333;
+}
+
+/* Pulsing Animation */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+    }
+}
+
+.github {
+    animation: pulse 2s infinite;
+}
+
+.discord {
+    animation: pulse 2s infinite 0.2s;
+}
+
+.tiktok {
+    animation: pulse 2s infinite 0.4s;
+}
+
+/* Project Title */
+.project-title {
+    font-weight: 600;
+    color: #00aaff;
+    position: relative;
+    z-index: 1;
+}
+
+/* Horizontal Rule */
+hr {
+    border: 0;
+    height: 1px;
+    background: #444;
+    margin: 40px 0;
+    position: relative;
+    z-index: 1;
+}
+
+/* Footer Text */
+.footer-text {
+    font-size: 0.9em;
+    color: #aaa;
+    position: relative;
+    z-index: 1;
+}
