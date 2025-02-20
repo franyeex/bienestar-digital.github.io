@@ -79,14 +79,5 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Handle audio playback
-    const audio = document.getElementById('background-music');  // Ensure the correct ID is used
-
-    function playAudio() {
-        audio.play().catch(error => {
-            console.log('Autoplay was prevented:', error);
-        });
-    }
-
-    // Play audio when user interacts with the page
-    document.addEventListener('click', playAudio); // Require user click to start audio
+    const audio = document.getElementById('background-music');  // Ensure the correct ID is used // Require user click to start audio
 });
