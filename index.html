@@ -3,33 +3,638 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fran's Website</title>
-    <link rel="icon" type="image/png" href="976.ico">
+    <title>Bienestar Digital - Tu Equilibrio en la Era Tecnológica</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;500;700&display=swap" rel="stylesheet">
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Header y Navegación */
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 1rem 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+        }
+
+        .nav-links a:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+        }
+
+        /* Sección Hero */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="a" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="%23fff" stop-opacity="0.1"/><stop offset="100%" stop-color="%23fff" stop-opacity="0"/></radialGradient></defs><circle cx="200" cy="200" r="50" fill="url(%23a)"/><circle cx="800" cy="300" r="80" fill="url(%23a)"/><circle cx="600" cy="700" r="60" fill="url(%23a)"/></svg>') no-repeat center center;
+            background-size: cover;
+            opacity: 0.1;
+        }
+
+        .hero-content {
+            z-index: 2;
+            position: relative;
+            max-width: 800px;
+            padding: 0 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #667eea;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            animation: fadeInUp 1s ease 0.4s both;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+
+        /* Secciones principales */
+        .section {
+            padding: 5rem 0;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+
+        .section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #333;
+            position: relative;
+        }
+
+        .section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 2px;
+        }
+
+        /* Grid de contenido */
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border: 1px solid #f0f0f0;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .card h3 {
+            color: #667eea;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Sección de estadísticas */
+        .stats-section {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 5rem 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #667eea;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            color: #666;
+            margin-top: 0.5rem;
+        }
+
+        /* Sección de consejos */
+        .tips-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .tip-item {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .tip-item:hover {
+            transform: scale(1.05);
+        }
+
+        .tip-item h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .footer-content h3 {
+            margin-bottom: 1rem;
+        }
+
+        .footer-content p {
+            opacity: 0.8;
+            margin-bottom: 1rem;
+        }
+
+        .license {
+            border-top: 1px solid #555;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        /* Animaciones */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Video responsive */
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 56.25%;
+            margin: 2rem 0;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section h2 {
+                font-size: 2rem;
+            }
+            
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Botón scroll to top */
+        .scroll-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+    </style>
 </head>
 <body>
-    <div id="particles-js" class="abstract-background"></div>
-    <div class="portfolio-container">
-        <div class="portfolio-card">
-            <h1>Hi, I'm <span class="highlight">fran</span>.</h1>
-            <p class="description">Hi, I'm Fran, but you can call me franyeex, gizmo, or whatever you want—I've got multiple names! I’m from Murcia, Spain, and I know how to code in a few languages. Here are my socials:</p>
-            <div class="social-links">
-                <a href="https://github.com/franyeex" target="_blank" class="social-link github">GitHub</a>
-                <a href="https://discord.com/users/705413639435452426" target="_blank" class="social-link discord">Discord</a>
-                <a href="https://tiktok.com/@cizcow" target="_blank" class="social-link tiktok">I don't have</a>
-            </div>
-            <h2>What I'm working on</h2>
-            <p class="project"><span class="project-title">Proyect 1:</span>Rolium - https://discord.gg/NM5FA5GEGv</p>
-            <p class="project"><span class="project-title">Proyect 2:</span>Baruserona Roleplay</p>
-            <hr>
-            <p class="footer-text"> Contact: frannna30@gmail.com</p>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="#" class="logo">
+                📱 Bienestar Digital
+            </a>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#que-es">¿Qué es?</a></li>
+                <li><a href="#detox">Detox Digital</a></li>
+                <li><a href="#consejos">Consejos</a></li>
+                <li><a href="#recursos">Recursos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sección Hero -->
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <h1>Bienestar Digital</h1>
+            <p>Encuentra el equilibrio perfecto entre la tecnología y tu vida personal. Aprende a usar la tecnología de manera consciente y saludable en 2024.</p>
+            <a href="#que-es" class="cta-button">Descubre Más</a>
         </div>
-    </div>
-    <audio id="background-music" src="music.mp3" preload="auto"></audio>
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-    <script src="script.js"></script>
+    </section>
+
+    <!-- ¿Qué es el Bienestar Digital? -->
+    <section class="section" id="que-es">
+        <h2>¿Qué es el Bienestar Digital?</h2>
+        <div class="content-grid">
+            <div class="card fade-in">
+                <h3>🧠 Salud Mental</h3>
+                <p>El bienestar digital se refiere al equilibrio saludable entre el uso de la tecnología y nuestro bienestar mental y físico. Implica usar la tecnología de manera consciente para mejorar nuestra calidad de vida sin que interfiera negativamente.</p>
+            </div>
+            <div class="card fade-in">
+                <h3>⚖️ Equilibrio</h3>
+                <p>No se trata de rechazar la tecnología, sino de encontrar un equilibrio que nos permita aprovechar sus beneficios mientras protegemos nuestra salud mental, relaciones sociales y productividad.</p>
+            </div>
+            <div class="card fade-in">
+                <h3>🎯 Uso Consciente</h3>
+                <p>Implica ser conscientes de cómo, cuándo y por qué usamos nuestros dispositivos digitales. Es desarrollar hábitos tecnológicos saludables que apoyen nuestros objetivos de vida.</p>
+            </div>
+        </div>
+        
+        <div class="video-container">
+<iframe width="791" height="445" src="https://www.youtube.com/embed/1SOVn6XjSuo" title="Bienestar Digital" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>        </div>
+    </section>
+
+    <!-- Estadísticas -->
+    <section class="stats-section">
+        <div class="section">
+            <h2>El Impacto de la Tecnología en 2024</h2>
+            <div class="stats-grid">
+                <div class="stat-card fade-in">
+                    <span class="stat-number">7h</span>
+                    <span class="stat-label">Promedio diario frente a pantallas</span>
+                </div>
+                <div class="stat-card fade-in">
+                    <span class="stat-number">150</span>
+                    <span class="stat-label">Veces que revisamos el móvil al día</span>
+                </div>
+                <div class="stat-card fade-in">
+                    <span class="stat-number">40%</span>
+                    <span class="stat-label">Aumento del estrés digital post-pandemia</span>
+                </div>
+                <div class="stat-card fade-in">
+                    <span class="stat-number">85%</span>
+                    <span class="stat-label">Personas que experimentan fatiga digital</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detox Digital -->
+    <section class="section" id="detox">
+        <h2>Detox Digital: Tu Descanso Tecnológico</h2>
+        <div class="content-grid">
+            <div class="card fade-in">
+                <h3>🌱 ¿Qué es el Detox Digital?</h3>
+                <p>El detox digital es la práctica de desconectarse temporalmente de dispositivos electrónicos y plataformas digitales para reducir el estrés, mejorar la concentración y recuperar el equilibrio mental y emocional.</p>
+            </div>
+            <div class="card fade-in">
+                <h3>✨ Beneficios Comprobados</h3>
+                <p>Mejora la calidad del sueño, incrementa la productividad, reduce la ansiedad y el estrés, mejora las relaciones interpersonales y aumenta la capacidad de atención y concentración.</p>
+            </div>
+            <div class="card fade-in">
+                <h3>📅 Tipos de Detox</h3>
+                <p>Micro-detox (1-2 horas), detox diario (sin pantallas 2 horas antes de dormir), detox semanal (1 día completo), y detox intensivo (varios días o semanas).</p>
+            </div>
+        </div>
+        
+        <div class="video-container">
+        <iframe width="791" height="445" src="https://www.youtube.com/embed/yI43fxpnk3A" title="Corto animado | Detox Digital" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>        </div>
+    </section>
+
+    <!-- Consejos Prácticos -->
+    <section class="section" id="consejos">
+        <h2>Consejos Prácticos para el Bienestar Digital</h2>
+        <div class="tips-list">
+            <div class="tip-item fade-in">
+                <h4>📱 Gestión de Notificaciones</h4>
+                <p>Desactiva las notificaciones no esenciales y programa horarios específicos para revisar mensajes y redes sociales.</p>
+            </div>
+            <div class="tip-item fade-in">
+                <h4>🛏️ Dormitorio Libre de Pantallas</h4>
+                <p>Mantén los dispositivos fuera del dormitorio y evita pantallas al menos 1 hora antes de acostarte.</p>
+            </div>
+            <div class="tip-item fade-in">
+                <h4>⏰ Técnica Pomodoro Digital</h4>
+                <p>Alterna 25 minutos de trabajo enfocado con 5 minutos de descanso sin dispositivos digitales.</p>
+            </div>
+            <div class="tip-item fade-in">
+                <h4>🧘 Mindfulness Tecnológico</h4>
+                <p>Antes de usar un dispositivo, pregúntate: "¿Por qué lo estoy usando?" y "¿Cómo me siento después?"</p>
+            </div>
+            <div class="tip-item fade-in">
+                <h4>👥 Interacciones Cara a Cara</h4>
+                <p>Prioriza las conversaciones presenciales y dedica tiempo de calidad sin dispositivos con familia y amigos.</p>
+            </div>
+            <div class="tip-item fade-in">
+                <h4>🌳 Tiempo en la Naturaleza</h4>
+                <p>Dedica al menos 30 minutos diarios a actividades al aire libre sin dispositivos electrónicos.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recursos y Herramientas -->
+    <section class="section" id="recursos">
+        <h2>Recursos y Herramientas</h2>
+        <div class="content-grid">
+            <div class="card fade-in">
+                <h3>📊 Apps de Bienestar Digital</h3>
+                <p><strong>Android:</strong> Digital Wellbeing (nativo)<br>
+                <strong>iOS:</strong> Screen Time (nativo)<br>
+                <strong>Multiplataforma:</strong> Forest, Moment, Space</p>
+            </div>
+            <div class="card fade-in">
+                <h3>🔧 Configuraciones Útiles</h3>
+                <p>Modo No Molestar programado, filtros de luz azul, límites de tiempo por app, espacios de trabajo sin notificaciones, y zona de carga fuera del dormitorio.</p>
+            </div>
+            <div class="card fade-in">
+                <h3>📚 Recursos Educativos</h3>
+                <p>Libros recomendados: "Digital Minimalism" de Cal Newport, cursos online sobre mindfulness digital, podcasts sobre tecnología consciente, y artículos científicos actualizados.</p>
+            </div>
+        </div>
+        
+        <div class="video-container">
+<iframe width="791" height="445" src="https://www.youtube.com/embed/k2YWClD0skA" title="Herramientas para mejorar el bienestar digital - Fractal" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <h3>Bienestar Digital 2025</h3>
+            <p>Tu guía para una relación saludable con la tecnología</p>
+            <p>Información basada en investigaciones actuales sobre salud mental y tecnología</p>
+            <p>Francisco Navarro Amador - 4ºD</p>
+            
+            <div class="license">
+                <p><strong>Licencia Creative Commons CC-BY-SA 4.0</strong></p>
+                <p>Esta obra está bajo una licencia Creative Commons Atribución-CompartirIgual 4.0 Internacional.</p>
+                <p>Puedes compartir, adaptar y construir sobre este material, siempre que proporciones la atribución adecuada y mantengas la misma licencia.</p>
+                <p>Fuentes utilizadas: Infobae, Vida y Salud, Coppel, UNAM, Norba Psicología, Top Doctors, Universidad Humanitas</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botón scroll to top -->
+    <button class="scroll-top" id="scrollTop">↑</button>
+
+    <script>
+        // Animaciones al hacer scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scroll para navegación
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Botón scroll to top
+        const scrollTopBtn = document.getElementById('scrollTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollTopBtn.style.display = 'flex';
+            } else {
+                scrollTopBtn.style.display = 'none';
+            }
+        });
+
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Animación de números en estadísticas
+        const animateNumbers = () => {
+            const statNumbers = document.querySelectorAll('.stat-number');
+            statNumbers.forEach(stat => {
+                const target = stat.textContent;
+                const isTime = target.includes('h');
+                const isPercentage = target.includes('%');
+                let finalNumber = parseInt(target);
+                
+                if (isTime) finalNumber = 7;
+                if (isPercentage) finalNumber = parseInt(target);
+                
+                let current = 0;
+                const increment = finalNumber / 50;
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= finalNumber) {
+                        current = finalNumber;
+                        clearInterval(timer);
+                    }
+                    
+                    if (isTime) {
+                        stat.textContent = Math.floor(current) + 'h';
+                    } else if (isPercentage) {
+                        stat.textContent = Math.floor(current) + '%';
+                    } else {
+                        stat.textContent = Math.floor(current);
+                    }
+                }, 50);
+            });
+        };
+
+        // Ejecutar animación de números cuando la sección sea visible
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateNumbers();
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        });
+
+        const statsSection = document.querySelector('.stats-section');
+        if (statsSection) {
+            statsObserver.observe(statsSection);
+        }
+    </script>
 </body>
 </html>
