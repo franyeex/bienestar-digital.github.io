@@ -251,6 +251,130 @@
             margin-bottom: 0.5rem;
         }
 
+        /* Sección de pagos electrónicos */
+        .payment-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border-left: 5px solid #667eea;
+            margin-bottom: 2rem;
+        }
+
+        .payment-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .payment-card h3 {
+            color: #667eea;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .payment-detail {
+            margin-bottom: 1.5rem;
+        }
+
+        .payment-detail h4 {
+            color: #333;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .payment-detail p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .advantages, .disadvantages {
+            margin-bottom: 1rem;
+        }
+
+        .advantages h4 {
+            color: #28a745;
+        }
+
+        .disadvantages h4 {
+            color: #dc3545;
+        }
+
+        .example-box {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+            margin-top: 1rem;
+        }
+
+        .example-box h4 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Tabla comparativa */
+        .comparison-table {
+            overflow-x: auto;
+            margin: 2rem 0;
+        }
+
+        .comparison-table table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .comparison-table th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        .comparison-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .comparison-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .comparison-table tr:hover {
+            background: #e9ecef;
+        }
+
+        .rating {
+            display: flex;
+            gap: 0.2rem;
+        }
+
+        .star {
+            color: #ffc107;
+            font-size: 1.2rem;
+        }
+
+        .conclusion-box {
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin-top: 2rem;
+        }
+
+        .conclusion-box h3 {
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
         /* Footer */
         footer {
             background: #333;
@@ -340,6 +464,15 @@
             .content-grid {
                 grid-template-columns: 1fr;
             }
+
+            .comparison-table {
+                font-size: 0.9rem;
+            }
+
+            .comparison-table th,
+            .comparison-table td {
+                padding: 0.5rem;
+            }
         }
 
         /* Botón scroll to top */
@@ -380,6 +513,7 @@
                 <li><a href="#que-es">¿Qué es?</a></li>
                 <li><a href="#detox">Detox Digital</a></li>
                 <li><a href="#consejos">Consejos</a></li>
+                <li><a href="#pagos">Pagos Digitales</a></li>
                 <li><a href="#recursos">Recursos</a></li>
             </ul>
         </nav>
@@ -490,6 +624,242 @@
             <div class="tip-item fade-in">
                 <h4>🌳 Tiempo en la Naturaleza</h4>
                 <p>Dedica al menos 30 minutos diarios a actividades al aire libre sin dispositivos electrónicos.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pagos Electrónicos -->
+    <section class="section" id="pagos">
+        <h2>💳 Pagos Electrónicos: Tu Dinero en la Era Digital</h2>
+        
+        <!-- Tarjetas de Crédito/Débito -->
+        <div class="payment-card fade-in">
+            <h3>💳 Tarjetas de Crédito y Débito</h3>
+            
+            <div class="payment-detail">
+                <h4>¿Qué es y cómo funciona?</h4>
+                <p>Las tarjetas de crédito y débito son instrumentos de pago que permiten realizar transacciones electrónicas mediante chip, banda magnética o tecnología contactless (NFC). Las de débito deducen el dinero directamente de tu cuenta bancaria, mientras las de crédito te otorgan un límite de crédito que pagas posteriormente.</p>
+            </div>
+
+            <div class="advantages">
+                <h4>✅ Ventajas</h4>
+                <p>Amplia aceptación mundial, protección contra fraude, facilidad de uso, permiten compras online, historial de transacciones detallado, y en el caso del crédito, ayudan a construir historial crediticio.</p>
+            </div>
+
+            <div class="disadvantages">
+                <h4>❌ Desventajas</h4>
+                <p>Posibles comisiones por uso, riesgo de endeudamiento excesivo con tarjetas de crédito, vulnerabilidad al fraude si se pierde la tarjeta, y dependencia de terminales de pago.</p>
+            </div>
+
+            <div class="example-box">
+                <h4>📝 Ejemplo de uso</h4>
+                <p>María va a hacer la compra semanal al supermercado. Al llegar a la caja, acerca su tarjeta de débito al terminal contactless, introduce su PIN y la compra de 85€ se descuenta automáticamente de su cuenta corriente.</p>
+            </div>
+        </div>
+
+        <!-- Bizum -->
+        <div class="payment-card fade-in">
+            <h3>📱 Bizum</h3>
+            
+            <div class="payment-detail">
+                <h4>¿Qué es y cómo funciona?</h4>
+                <p>Bizum es un servicio de pago inmediato entre particulares y comercios asociado a la banca española. Funciona a través de apps bancarias usando el número de teléfono como identificador, permitiendo enviar y recibir dinero al instante entre cuentas bancarias españolas.</p>
+            </div>
+
+            <div class="advantages">
+                <h4>✅ Ventajas</h4>
+                <p>Transferencias instantáneas 24/7, solo necesitas el número de teléfono, sin comisiones entre particulares, integrado en apps bancarias, límites de seguridad configurables, y cada vez más comercios lo aceptan.</p>
+            </div>
+
+            <div class="disadvantages">
+                <h4>❌ Desventajas</h4>
+                <p>Solo funciona en España, limitado a bancos adheridos al servicio, límites de cantidad (máximo 1.000€ por transacción), no disponible para pagos internacionales.</p>
+            </div>
+
+            <div class="example-box">
+                <h4>📝 Ejemplo de uso</h4>
+                <p>Carlos cena con amigos en un restaurante. Cuando llega la cuenta de 120€, decide pagarla completa y sus tres amigos le envían 30€ cada uno a través de Bizum. En menos de un minuto, Carlos recibe las tres transferencias directamente en su cuenta.</p>
+            </div>
+        </div>
+
+        <!-- PayPal -->
+        <div class="payment-card fade-in">
+            <h3>🌐 PayPal</h3>
+            
+            <div class="payment-detail">
+                <h4>¿Qué es y cómo funciona?</h4>
+                <p>PayPal es una plataforma de pagos digitales que actúa como intermediario entre tu banco/tarjeta y el comercio. Te permite pagar online sin compartir tus datos bancarios con el vendedor, y también enviar dinero a otros usuarios de PayPal usando solo su email.</p>
+            </div>
+
+            <div class="advantages">
+                <h4>✅ Ventajas</h4>
+                <p>Protección del comprador muy robusta, no necesitas compartir datos bancarios, aceptado mundialmente, fácil de usar, permite pagos en múltiples divisas, y ofrece financiación en algunos casos.</p>
+            </div>
+
+            <div class="disadvantages">
+                <h4>❌ Desventajas</h4>
+                <p>Comisiones por recibir pagos (vendedores), tipos de cambio menos favorables, puede congelar cuentas temporalmente, proceso de resolución de disputas puede ser lento.</p>
+            </div>
+
+            <div class="example-box">
+                <h4>📝 Ejemplo de uso</h4>
+                <p>Ana compra unos auriculares por 150€ en una tienda online alemana. En lugar de introducir los datos de su tarjeta, selecciona PayPal, se identifica con su email y contraseña, y confirma el pago. El vendedor recibe el dinero sin ver los datos bancarios de Ana.</p>
+            </div>
+        </div>
+
+        <!-- Apple Pay / Google Pay -->
+        <div class="payment-card fade-in">
+            <h3>📲 Apple Pay / Google Pay</h3>
+            
+            <div class="payment-detail">
+                <h4>¿Qué es y cómo funciona?</h4>
+                <p>Son servicios de pago móvil que almacenan de forma segura la información de tus tarjetas en el móvil. Utilizan tecnología NFC y biometría (huella dactilar, Face ID) para realizar pagos contactless de forma rápida y segura tanto en tiendas físicas como online.</p>
+            </div>
+
+            <div class="advantages">
+                <h4>✅ Ventajas</h4>
+                <p>Mayor seguridad mediante tokenización, autenticación biométrica, no necesitas llevar tarjetas físicas, rápido y conveniente, funciona sin conexión a internet para pagos NFC, historial de compras organizado.</p>
+            </div>
+
+            <div class="disadvantages">
+                <h4>❌ Desventajas</h4>
+                <p>Limitado a dispositivos compatibles, no todos los comercios lo aceptan, dependes de la batería del móvil, posible pérdida de acceso si pierdes el dispositivo (aunque hay medidas de seguridad).</p>
+            </div>
+
+            <div class="example-box">
+                <h4>📝 Ejemplo de uso</h4>
+                <p>Pedro va a comprar café. Su móvil se ha quedado sin batería, pero recuerda que configuró Apple Pay en su Apple Watch. Acerca el reloj al terminal de pago, confirma con doble clic el botón lateral, y paga los 2.50€ del café instantáneamente.</p>
+            </div>
+        </div>
+
+        <!-- Criptomonedas -->
+        <div class="payment-card fade-in">
+            <h3>₿ Criptomonedas (Bitcoin, Ethereum, etc.)</h3>
+            
+            <div class="payment-detail">
+                <h4>¿Qué es y cómo funciona?</h4>
+                <p>Las criptomonedas son monedas digitales descentralizadas que utilizan criptografía y tecnología blockchain para verificar y registrar transacciones. Funcionan sin intermediarios bancarios, almacenándose en carteras digitales (wallets) y permitiendo pagos peer-to-peer a través de internet.</p>
+            </div>
+
+            <div class="advantages">
+                <h4>✅ Ventajas</h4>
+                <p>Transacciones globales sin intermediarios, menores comisiones para transferencias internacionales, mayor privacidad, imposible de falsificar, disponible 24/7, no depende de bancos tradicionales.</p>
+            </div>
+
+            <div class="disadvantages">
+                <h4>❌ Desventajas</h4>
+                <p>Alta volatilidad de precios, aceptación limitada, complejidad técnica para usuarios promedio, irreversibilidad de transacciones, consume mucha energía, regulación incierta en muchos países.</p>
+            </div>
+
+            <div class="example-box">
+                <h4>📝 Ejemplo de uso</h4>
+                <p>Luis, freelancer español, recibe un pago de 500$ de un cliente estadounidense en Bitcoin. En lugar de esperar días y pagar altas comisiones bancarias, recibe el Bitcoin en su wallet en 10 minutos y puede convertirlo a euros cuando el tipo de cambio sea favorable.</p>
+            </div>
+        </div>
+
+        <!-- Transferencias Bancarias Online -->
+        <div class="payment-card fade-in">
+            <h3>🏦 Transferencias Bancarias Online</h3>
+            
+            <div class="payment-detail">
+                <h4>¿Qué es y cómo funciona?</h4>
+                <p>Son transferencias de dinero realizadas a través de la banca online o apps móviles bancarias. Permiten enviar dinero directamente entre cuentas bancarias usando el IBAN del destinatario, tanto a nivel nacional como internacional (SEPA en Europa).</p>
+            </div>
+
+            <div class="advantages">
+                <h4>✅ Ventajas</h4>
+                <p>Muy seguras al usar sistemas bancarios establecidos, permiten transferir grandes cantidades, registro oficial de la transacción, disponibles en todas las entidades bancarias, sin límites de comercios.</p>
+            </div>
+
+            <div class="disadvantages">
+                <h4>❌ Desventajas</h4>
+                <p>Pueden tardar horas o días en procesarse, comisiones por transferencias internacionales, necesitas conocer datos bancarios completos del destinatario, horarios de procesamiento limitados en algunos bancos.</p>
+            </div>
+
+            <div class="example-box">
+                <h4>📝 Ejemplo de uso</h4>
+                <p>Carmen necesita pagar 2.000€ de entrada para alquilar un apartamento. Desde la app de su banco, introduce el IBAN del propietario, el concepto "Fianza apartamento C/ Mayor" y confirma la transferencia que llegará en unas horas al destinatario.</p>
+            </div>
+        </div>
+
+        <!-- Comparación Final -->
+        <div class="comparison-table">
+            <h3 style="text-align: center; margin-bottom: 2rem; color: #333;">📊 Tabla Comparativa de Métodos de Pago</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Método de Pago</th>
+                        <th>Seguridad</th>
+                        <th>Comodidad</th>
+                        <th>Aceptación</th>
+                        <th>Velocidad</th>
+                        <th>Costo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Tarjeta Crédito/Débito</strong></td>
+                        <td><div class="rating">★★★★☆</div></td>
+                        <td><div class="rating">★★★★★</div></td>
+                        <td><div class="rating">★★★★★</div></td>
+                        <td><div class="rating">★★★★★</div></td>
+                        <td><div class="rating">★★★☆☆</div></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Bizum</strong></td>
+                        <td><div class="rating">★★★★★</div></td>
+                        <td><div class="rating">★★★★★</div></td>
+                        <td><div class="rating">★★★☆☆</div></td>
+                        <td><div class="rating">★★★★★</div></td>
+                        <td><div class="rating">★★★★★</div></td>
+                    </tr>
+                    <tr>
+                        <td><strong>PayPal</strong></td>
+                        <td><div class="rating">★★★★★</div></td>
+                        <td><div class="rating">★★★★☆</div></td>
+                        <td><div class="rating">★★★★☆</div></td>
+                        <td><div class="rating">★★★★☆</div></td>
+                        <td><div class="rating">★★★☆☆</div></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Apple Pay/Google Pay</strong></td>
+                        <td><div class="rating">★★★★★</div></td>
+                        <td><div class="rating">★★★★★</div></td>
+                        <td><div class="rating">★★★☆☆</div></td>
+                        <td><div class="rating">★★★★★</div></td>
+                        <td><div class="rating">★★★★☆</div></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Criptomonedas</strong></td>
+                        <td><div class="rating">★★★☆☆</div></td>
+                        <td><div class="rating">★★☆☆☆</div></td>
+                        <td><div class="rating">★★☆☆☆</div></td>
+                        <td><div class="rating">★★★☆☆</div></td>
+                        <td><div class="rating">★★★★☆</div></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Transferencia Bancaria</strong></td>
+                        <td><div class="rating">★★★★★</div></td>
+                        <td><div class="rating">★★★☆☆</div></td>
+                        <td><div class="rating">★★★★★</div></td>
+                        <td><div class="rating">★★☆☆☆</div></td>
+                        <td><div class="rating">★★★☆☆</div></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Conclusión Personal -->
+        <div class="conclusion-box fade-in">
+            <h3>🎯 Mi Conclusión Personal</h3>
+            <div style="margin-bottom: 1rem;">
+                <strong>🔒 Más Seguro:</strong> Considero que <strong>Bizum y Apple Pay/Google Pay</strong> son los más seguros, ya que Bizum está respaldado por la banca española con límites controlados, y los servicios de pago móvil utilizan tokenización y biometría, haciendo casi imposible el fraude.
+            </div>
+            <div style="margin-bottom: 1rem;">
+                <strong>😌 Más Cómodo:</strong> Sin duda <strong>Apple Pay/Google Pay</strong> para pagos físicos (solo acercar el móvil) y <strong>Bizum</strong> para transferencias entre amigos (solo el número de teléfono). Ambos son instantáneos y súper intuitivos.
+            </div>
+            <div>
+                <strong>💡 Mi Elección Personal:</strong> Usaría principalmente <strong>Apple Pay para compras diarias</strong> (supermercado, cafeterías), <strong>Bizum para dividir gastos con amigos</strong>, y <strong>tarjeta de crédito para compras online grandes</strong> por su protección adicional. Las criptomonedas las reservaría para inversión, no para pagos cotidianos debido a su volatilidad.
             </div>
         </div>
     </section>
